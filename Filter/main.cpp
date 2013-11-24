@@ -7,7 +7,8 @@
 #include <limits>
 #include <cctype> 
 #include <cmath>
-#include "libscat.h" //@ Cannot find the header file called "libscat.h"
+#include <algorithm>
+//#include <libscat.h> //@ Cannot find the header file called "libscat.h"
 
 #include "Find.h"
 
@@ -17,8 +18,11 @@ try
 	//--
 	//-- Your code goes here.
 	//--
+	using std::vector;
+	using std::string;
+	using std::getline;
 	using namespace std;
-	using namespace scat;
+
 	string baseName;
 	if (argc == 1) {
 		baseName = "Test_ANITA_5000";
@@ -105,7 +109,7 @@ try
 	cout << "Minimum gamma energy: " << gMin << " MeV\n";
 	cout << "Maximum gamma energy: " << gMax << " MeV\n";
 
-	scat::pause("\nPress <ENTER> to end the program.");
+	system("pause");
 
 	return 0;
 }
@@ -113,6 +117,6 @@ try
 catch (std::exception& e)
 {
 	std::cerr << e.what();
-	scat::pause("\nPress <ENTER> to end the program.");
+	system("pause");
 	return 1;
 }
